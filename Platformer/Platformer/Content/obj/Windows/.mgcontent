@@ -4,9 +4,9 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>c:/users/jack.hassett/documents/visual studio 2015/Projects/Platformer/Platformer/Content/hero.png</File>
-    <File>c:/users/jack.hassett/documents/visual studio 2015/Projects/Platformer/Platformer/Content/Arial.spritefont</File>
-    <File>c:/users/jack.hassett/documents/visual studio 2015/Projects/Platformer/Platformer/Content/Tileset.png</File>
-    <File>c:/users/jack.hassett/documents/visual studio 2015/Projects/Platformer/Platformer/Content/Level1.tmx</File>
+    <File>C:/Users/jack.hassett/Desktop/New folder/Platformer/Platformer/Content/hero.png</File>
+    <File>C:/Users/jack.hassett/Desktop/New folder/Platformer/Platformer/Content/Arial.spritefont</File>
+    <File>C:/Users/jack.hassett/Desktop/New folder/Platformer/Platformer/Content/Tileset.png</File>
+    <File>C:/Users/jack.hassett/Desktop/New folder/Platformer/Platformer/Content/Level1.tmx</File>
   </SourceFiles>
 </SourceFileCollection>
