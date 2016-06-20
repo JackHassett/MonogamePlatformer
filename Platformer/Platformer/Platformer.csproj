@@ -38,7 +38,9 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AnimatedTexture.cs" />
+    <Compile Include="currentAnimation.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

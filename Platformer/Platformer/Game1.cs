@@ -5,6 +5,7 @@ using MonoGame.Extended;
 using MonoGame.Extended.Maps.Tiled;
 using MonoGame.Extended.ViewportAdapters;
 using System;
+using System.Diagnostics;
 
 namespace Platformer
 {
@@ -20,7 +21,7 @@ namespace Platformer
 
         public static int tile = 64;
         public static float meter = tile;
-        public static float gravity = meter * 9.8f * 6.0f;
+        public static float gravity = meter * 6f * 6.0f;
         public static Vector2 maxVelocity = new Vector2(meter * 10, meter * 15);
         public static float acceleration = maxVelocity.X * 2;
         public static float friction = maxVelocity.X * 6;
@@ -59,6 +60,7 @@ namespace Platformer
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            player = new Player(this);
 
             base.Initialize();
         }
@@ -73,7 +75,7 @@ namespace Platformer
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             player.Load(Content);
-
+             
             var ViewportAdapter = new BoxingViewportAdapter(Window, GraphicsDevice, ScreenWidth, ScreenHeight);
 
             camera = new Camera2D(ViewportAdapter);
@@ -111,7 +113,9 @@ namespace Platformer
                 Exit();
             float deltaTime = (float)gameTime.ElapsedGameTime.TotalSeconds; 
         player.Update(deltaTime);
+            Debug.WriteLine(player.Position);
             // TODO: Add your update logic here
+            camera.Position = player.Position + new Vector2(32, 32) - new Vector2(ScreenWidth/2, ScreenHeight/2);
 
             base.Update(gameTime);
         }
@@ -122,12 +126,12 @@ namespace Platformer
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Gray);
             var transformMatrix = camera.GetViewMatrix();
             spriteBatch.Begin(transformMatrix: transformMatrix);
-            
-            map.Draw(spriteBatch);
             player.Draw(spriteBatch);
+            map.Draw(spriteBatch);
+            
 
             spriteBatch.End();
             // TODO: Add your drawing code here
@@ -140,7 +144,7 @@ namespace Platformer
         }
         public int TileToPixel(int tileCoord)
         {
-            return tileCoord * tileCoord;
+            return tileCoord * tile;
         }
 
         public int CellAtPixelCoord(Vector2 pixelCoords)
