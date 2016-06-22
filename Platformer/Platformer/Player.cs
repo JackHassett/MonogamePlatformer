@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Xna.Framework.Audio;
+using MonoGame.Extended.Maps.Tiled;
 
 namespace Platformer
 {
@@ -22,7 +24,32 @@ namespace Platformer
         Vector2 velocity = Vector2.Zero;
         Vector2 position = Vector2.Zero;
 
-        
+         
+        SoundEffect jumpSound;
+        SoundEffectInstance jumpSoundInsance;
+
+
+        bool autoJump = true;
+
+        public Vector2 Velocity
+        {
+            get { return velocity; }
+        }
+
+        public Rectangle Bounds
+        {
+            get { return sprite.Bounds; }
+        }
+
+        public bool IsJumping
+        {
+            get { return isJumping; }
+        }
+
+        public void JumpOnCollision()
+        {
+            autoJump = true;
+        }
 
         public Vector2 Position
         {
@@ -39,12 +66,13 @@ namespace Platformer
 
             if (Keyboard.GetState().IsKeyDown(Keys.Left) == true)
             { acceleration.X -= Game1.acceleration;
-                sprite.SetFlipped(true);
                 sprite.Play();
+                sprite.SetFlipped(true);
+                
             }
             else if (wasMovingLeft == true)
             { acceleration.X += Game1.friction;
-                sprite.SetFlipped(false);
+                
                 
             }
 
@@ -52,16 +80,20 @@ namespace Platformer
             {
                 acceleration.X += Game1.acceleration;
                 sprite.Play();
+                sprite.SetFlipped(false);
             }
             else if (wasMovingRight == true)
             {
                 acceleration.X -= Game1.friction;
+                
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Up) == true && this.isJumping == false && hasGravity == false)
+            if (Keyboard.GetState().IsKeyDown(Keys.Up) == true && this.isJumping == false && hasGravity == false || autoJump == true)
             {
+                autoJump = false;
                 acceleration.Y -= (9999999999999 * 99999);
                 this.isJumping = true;
+                jumpSoundInsance.Play();
             }
             velocity += acceleration * deltaTime;
             velocity.X = MathHelper.Clamp(velocity.X, -Game1.maxVelocity.X, Game1.maxVelocity.X);
@@ -171,6 +203,9 @@ namespace Platformer
             AnimatedTexture animation = new AnimatedTexture(Vector2.Zero, 0, 1, 1);
             animation.Load(content, "walk", 12, 20);
 
+            jumpSound = content.Load<SoundEffect>("Jump");
+            jumpSoundInsance = jumpSound.CreateInstance();
+
             sprite.Add(animation, 0, -5);
             sprite.Pause();
         }
@@ -179,5 +214,6 @@ namespace Platformer
         {
             sprite.Draw(spriteBatch);
         }
+
     }
 }

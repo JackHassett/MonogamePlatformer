@@ -59,3 +59,8 @@ C:\Users\jack.hassett\Desktop\New folder\Platformer\Platformer\bin\Windows\x86\D
 C:\Users\jack.hassett\Desktop\New folder\Platformer\Platformer\bin\Windows\x86\Debug\SharpDX.Direct3D9.xml
 C:\Users\jack.hassett\Desktop\New folder\Platformer\Platformer\obj\x86\Debug\Platformer.csprojResolveAssemblyReference.cache
 C:\Users\jack.hassett\Desktop\New folder\Platformer\Platformer\bin\Windows\x86\Debug\Content\walk.xnb
+C:\Users\jack.hassett\Desktop\New folder\Platformer\Platformer\bin\Windows\x86\Debug\Content\SuperHero_original_no_Intro.wma
+C:\Users\jack.hassett\Desktop\New folder\Platformer\Platformer\bin\Windows\x86\Debug\Content\SuperHero_original_no_Intro.xnb
+C:\Users\jack.hassett\Desktop\New folder\Platformer\Platformer\bin\Windows\x86\Debug\Content\Jump.xnb
+C:\Users\jack.hassett\Desktop\New folder\Platformer\Platformer\bin\Windows\x86\Debug\Content\zombie.xnb
+C:\Users\jack.hassett\Desktop\New folder\Platformer\Platformer\bin\Windows\x86\Debug\Content\chest.xnb
