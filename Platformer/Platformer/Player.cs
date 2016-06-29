@@ -119,6 +119,11 @@ namespace Platformer
             //    acceleration = new Vector2(0, Game1.gravity);
             //}
 
+            if (this.velocity.X == 0)
+            {
+                sprite.Pause();
+            }
+
             if (this.velocity.Y > 0)
             {
                 if ((celldown && !cell) || (celldiag && !cellright && nx))

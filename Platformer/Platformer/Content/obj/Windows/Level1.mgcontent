@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/jack.hassett/Desktop/New folder/Platformer/Platformer/Content/Level1.tmx</SourceFile>
-  <SourceTime>2016-06-22T19:26:56.3856455+09:30</SourceTime>
+  <SourceTime>2016-06-22T20:15:01.7896455+09:30</SourceTime>
   <DestFile>C:/Users/jack.hassett/Desktop/New folder/Platformer/Platformer/Content/bin/Windows/Level1.xnb</DestFile>
-  <DestTime>2016-06-22T19:26:58.2926455+09:30</DestTime>
+  <DestTime>2016-06-27T18:12:13.9348483+09:30</DestTime>
   <Importer>TiledMapImporter</Importer>
   <ImporterTime>2016-06-06T20:06:51.2933204+09:30</ImporterTime>
   <Processor>TiledMapProcessor</Processor>
